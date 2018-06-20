@@ -1,0 +1,19 @@
+{
+  "name": "codecept",
+  "version": "1.0.0",
+  "description": "test codecept",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/codeceptjs run --steps",
+    "selenium-standalone": "./bin/selenium-standalone",
+    "selenium-install": "./node_modules/selenium-standalone/bin/selenium-standalone install --config=./selenium-config.js",
+    "selenium-start": "./node_modules/selenium-standalone/bin/selenium-standalone start --config=./selenium-config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "codeceptjs": "^1.2.1",
+    "selenium-standalone": "^6.15.1",
+    "webdriverio": "^4.13.0"
+  }
+}
