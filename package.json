@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "rm -R ./output",
     "test": "./node_modules/codeceptjs/bin/codecept.js run",
-    "selenium":"./output && ./node_modules/selenium-standalone/bin/selenium-standalone install && ./node_modules/selenium-standalone/bin/selenium-standalone start"
+    "selenium":"./node_modules/selenium-standalone/bin/selenium-standalone install && ./node_modules/selenium-standalone/bin/selenium-standalone start"
   },
   "author": "",
   "license": "ISC",
