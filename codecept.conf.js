@@ -4,8 +4,9 @@ exports.config = {
   helpers: {
     WebDriver: {
       url: 'https://diplomatiegouvfr.github.io',
-      browser: 'chrome',
-      waitForTimeout: 2000
+      browser: 'firefox',
+      waitForTimeout: 2000,
+      logLevel: "error"
     },
     CheckboxHelper: {
       require: './helpers/checkbox_helper.js',
@@ -13,6 +14,11 @@ exports.config = {
   },
   include: {},
   bootstrap: null,
-  mocha: {},
+  mocha: {
+    "reporterOptions": {
+        //"mochaFile": "reports/result.xml"
+        "reportDir": "reports"
+    }
+  },
   name: 'codecept'
 }

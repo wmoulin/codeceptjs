@@ -26,7 +26,13 @@ class MyHelper extends Helper {
         try {
           await this.helpers['WebDriver'].dontSeeCheckboxIsChecked(id);
         } catch(e) {return ;}
-        await this.helpers['WebDriver'].checkOption(id);
+        
+        //await this.helpers['WebDriver'].checkOption(id); error for firefox (span mask checkbox)
+        await this.helpers['WebDriver'].executeScript((id) => {
+          document.querySelector(id).click();
+        }, id);
+
+
       },
       uncheck: async () => {
         output.step({comment: `uncheck checkbox with selector "${id}"`});
@@ -35,7 +41,10 @@ class MyHelper extends Helper {
         try {
           await this.helpers['WebDriver'].seeCheckboxIsChecked(id);
         } catch(e) {return ;}
-        await this.helpers['WebDriver'].checkOption(id);
+        //await this.helpers['WebDriver'].checkOption(id); error for firefox (span mask checkbox)
+        await this.helpers['WebDriver'].executeScript((id) => {
+          document.querySelector(id).click();
+        }, id);
       }
     }
   }
